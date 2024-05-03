@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Temperature and Humidity Monitoring</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="styles.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <script src="https://use.fontawesome.com/68cbe5c16f.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/styles.min.css">
+  <script src="dashboard.js"></script>
+  <script src="lightSensorControl.js"></script>
+  <meta charset="utf-8">
+  <title>Smart UI</title>
+</head>
+<body>
+  <div id="window-container">
+
+    <!--The temperature and humidity window-->
+    <div class="window" id = "temp">
+      <div id="C">
+        <div class="header">
+          <div class="drag header-left">
+            <i class="material-icons">cloud_queue</i>
+
+          </div>
+          <div id="outside" class="drag header-right">
+            Outside: 26°C
+          </div>
+          <div class="right">
+            <i class="material-icons">show_chart</i>
+          </div>
+        </div>
+        <canvas id="C_graph"></canvas>
+        <div class="currentWeather"><span class="data">24.7°C</span></div>
+      </div>
+      <div id="H">
+        <div class="header">
+          <div class="drag header-left">
+            <i class="material-icons">invert_colors</i>
+
+          </div>
+          <div  class="outside drag header-right">
+            Outside: 70%
+          </div>
+          <div class="right">
+            <i class="material-icons">show_chart</i>
+          </div>
+        </div>
+        <canvas id="H_graph"></canvas>
+        <div class="currentHumidity">
+          <span class="data">66%</span>
+        </div>
+      </div>
+    </div>
+
+
+    <!--light sensor window-->
+    <div class="window" id = "light">
+      <div id="L">
+        <div class="header">
+          <i class="material-icons">lightbulb_outline</i>
+          <div class="right">
+            <i class="material-icons">show_chart</i>
+          </div>
+        </div>
+        <div id="lightPercentage" class="data">
+          <canvas id="lightCanvas"></canvas>
+          <div id="lightinput">
+            <div id="percentageIncrement">+</div>
+            <div id="percentageValue">80%</div>
+            <div id="percentageDecrement">-</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--Gas and Co sensor window-->
+    <div class="window" id = "gas">
+
+      <div id="Co">
+        <div class="header">
+          <i class="material-icons">error_outline</i>
+          <div  class="outside drag header-right">
+            GAZ TOXIQUE : Co
+          </div>
+          <div class="right">
+            <i class="material-icons">show_chart</i>
+          </div>
+
+        </div>
+        <div class="jauge">
+          <span>SAFE</span>
+          <canvas id="Co_graph"></canvas>
+
+        </div>
+        <div class="GasCo">
+        </div>
+      </div>
+    </div>
+
+    <!--Electricity consumption for the day-->
+    <div class="window" id = "electricity">
+      <div id="E">
+        <div class="header">
+          <div class="drag header-left">
+            <i class="material-icons">flash_on</i>
+          </div>
+          <div  class="outside drag header-right">
+            Today
+          </div>
+          <div class="right">
+            <i class="material-icons">show_chart</i>
+          </div>
+        </div>
+        <canvas id="E_graph"></canvas>
+        <div class="currentElectricity">
+          <span class="data">79<span id="kwh">KWH</span> </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
